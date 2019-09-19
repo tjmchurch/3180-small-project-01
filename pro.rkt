@@ -1,12 +1,13 @@
 #lang racket
 (require 2htdp/batch-io)
-;(define allWords (read-lines "linuxwords"))
+(define (allSevenLetterWordsWithout_eio lst)
+  (substring (sevenLetterWithOutEIO lst)  2)
+  )
 (define (sevenLetterWithOutEIO lst)
   (cond
     [(empty? lst)""]
-    [(sevenLetter? (first lst)) (string-append (first lst) ", " (sevenLetterWithOutEIO (rest lst)))]
+    [(sevenLetter? (first lst)) (string-append ", " (first lst) (sevenLetterWithOutEIO (rest lst)))]
     [else (sevenLetterWithOutEIO (rest lst))]
-
    )
   )
 (define (sevenLetter? str)
@@ -44,10 +45,7 @@
     [else (NumberOfZzz (rest lst))]
     )
   )
-(sevenLetter? "assasmm")
-(sevenLetter? "aesasa")
-(NumberOfZzz (string->list"ZsaazzZZccz"))
-
-;(NumberOfZzzHelper (read-lines "words.txt"))
-(sevenLetterWithOutEIO (read-lines "words.txt"))
+;list all words in words.txt that do not contain e i o
+(allSevenLetterWordsWithout_eio (read-lines "words.txt"))
+;number of letter z in words.txt
 (NumberOfZzzHelper (read-lines "words.txt"))
