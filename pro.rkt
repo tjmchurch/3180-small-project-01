@@ -49,5 +49,5 @@
 (NumberOfZzz (string->list"ZsaazzZZccz"))
 
 ;(NumberOfZzzHelper (read-lines "words.txt"))
-(time(begin(sevenLetterWithOutEIO (read-lines "words.txt"))'done))
-(time(begin(NumberOfZzzHelper (read-lines "words.txt"))'done))
+(sevenLetterWithOutEIO (read-lines "words.txt"))
+(NumberOfZzzHelper (read-lines "words.txt"))
